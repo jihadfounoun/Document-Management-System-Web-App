@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Error page</title>
+    <link rel="stylesheet" href="css/error.css">
+</head>
+
+<body>
+    <div class="error-container">
+    
+    
+    <div th:if="${session.currentUser}">
+    <a class="back-button" href="GoBack"></a> <br> <br>
+    </div>
+    <div class="header">
+     <h1 class="error-title">Error</h1>
+        
+        
+        <div th:if="${session.currentUser}" >
+            <div class="user-info">
+				<span th:text="'Username: ' + ${session.currentUser.name}"></span> <span
+					th:text="'Email: ' + ${session.currentUser.email}"></span> <a
+					class="logout" href="Logout">Logout</a> <a class="goHome"
+					href="GoToHome">Home</a>
+			</div>
+        </div>
+        </div>
+        
+        <div class="error-message" th:if="${error}" th:text="${error}"></div>
+        
+        <div th:unless="${session.currentUser}" class="error-links">
+            <a th:href="@{/}">Login</a>
+        </div>
+        
+    </div>
+</body>
+
+</html>

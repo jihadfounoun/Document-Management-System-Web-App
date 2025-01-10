@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ProjectPureHtml
+Bundle-SymbolicName: ProjectPureHtml
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-19
+Automatic-Module-Name: ProjectPureHtml
+Export-Package: beans,
+ controllers,
+ dao,
+ test,
+ utilities

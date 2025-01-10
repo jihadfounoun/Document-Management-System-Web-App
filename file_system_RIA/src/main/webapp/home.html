@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="css/home.css" />
+<title>Insert title here</title>
+<script src="js/utilities.js" charset="utf-8" defer></script>
+<script src="js/foldersManagement.js" charset="utf-8" defer></script>
+</head>
+<body>
+	<div class="container" id="home_page">
+
+		<div class="header">
+		
+			<h2 id="home_page_title">
+				Home page 
+			</h2>
+			 
+			<div class="user-info" id="user_info_home"></div>
+			
+		</div>
+		<h4>welcome <span id="user_name"></span></h4>
+		<div id="addMainFolder_button"></div>
+		<div class="folder-container" id="folderTreeContainer"></div>
+		<div class="dustbin"  id="dustbin_home"></div>
+	</div>
+
+	<div class="container" id="content_page" >
+    
+	<div class="header" >
+	
+	<h2 id="content_page_title">
+		Folder Content	
+	</h2>
+		<div class="user-info" id="user_info_content">
+        </div>
+
+	</div>
+	
+	<div>Content of <span id="folder_name"></span>:</div>
+	<div class="items-container" >
+	<div class="left-container" id="left-container" >
+	<div id="documents"></div>
+	<div id="folders"></div>
+	<br>
+	</div>
+	<div class="droppable-folder-container" id="droppableFolders_container">
+	
+	</div>
+	</div>
+	<div class="inactive-element" id="folder_date"></div>
+	<div class="dustbin" id="dustbin_content"></div>
+	</div>
+	
+	<div id="addFolderModal" class="modal">
+		<div class="modal-content">
+			<span id="close_addFolderModal"class="close">&times;</span>
+			<h4>Insert the name of the folder you want to create: </h4>
+			<form id="addFolder_form" action="#">
+			<div class="form-group">
+			    <input type="hidden" id="folderId" name="parentFolderId">
+				folder name <input type="text" placeholder="Enter folder name" name="folderName" required><br><br>
+				<button id="addFolder_button" type="submit" >create folder</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	<div id="addDocumentModal" class="modal">
+		<div class="modal-content">
+			<span id="close_addDocumentModal"class="close">&times;</span>
+			<h4>Insert the required fields to create a document: </h4>
+			<form id="addDocument_form" action="#">
+			<div class="form-group">
+			    <input type="hidden" id="documentFolderId" name="parentFolderId">
+				document name <input type="text" name="documentName" placeholder="Enter document name" required ><br><br>
+				document description <input type="text" name="documentDescription" placeholder="Enter brief description of the document" required><br><br>
+				document type <input type="text" name="documentType" placeholder="Enter document format" required><br><br>
+				<button id="addDocument_button" type="submit" >create document</button>
+			</div>
+			</form>
+		</div>
+	</div>
+	
+	<div id="errorMessageModal" class="modal">
+		<div class="modal-content">
+			<span id="close_errorMessageModal"class="close">&times;</span>
+			<div class="error" id="error_message"></div>
+		</div>
+	</div>
+	
+	<div id="confirmationModal" class="modal">
+		<div class="modal-content">
+			<span id="close_confirmationModal"class="close">&times;</span>
+			<div id="confirmation_message"></div>
+			<input  id="confirm_button"  type="button" value="ok">
+			<input  id="cancel_button"  type="button" value="cancel">
+		</div>
+	</div>
+	
+	<div id="documentContentModal" class="modal">
+		<div class="modal-content">
+			<span id="close_documentModal"class="close">&times;</span>
+			<h2>Details of Document</h2>
+			<p ><strong>Name:</strong><span id="documentName"></span></p>
+			<p ><strong>Description:</strong><span id="documentDescription"></span></p>
+			<p ><strong>Type:</strong><span id="documentType"></span></p>
+			<p ><strong>Date:</strong><span id="documentDate"></span></p>
+		</div>
+	</div>
+	
+	<div id="folderDetailModal" class="modal">
+		<div class="modal-content">
+			<span id="close_folderModal"class="close">&times;</span>
+			<h2>Details of Folder</h2>
+			<p ><strong>Name:</strong><span id="folderName"></span></p>
+			<p ><strong>Date:</strong><span id="folderDate"></span></p>
+		</div>
+	</div>
+	
+	<br>
+	<br>
+
+
+	<br>
+	<br>
+	<div class="dustbean" id="dustbin_button"></div>
+
+
+
+
+
+
+
+
+</body>
+</html>

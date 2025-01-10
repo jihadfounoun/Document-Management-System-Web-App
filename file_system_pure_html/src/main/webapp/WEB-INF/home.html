@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Home</title>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+	<div th:fragment="folderTree(folders, parentId,mode)">
+
+		<div th:if="${mode}">
+			<ul>
+				<li th:each="folder : ${folders}"
+					th:if="${folder.parentFolderId} == ${parentId}">
+					<div th:if="${parentFolder==folder.id}">
+						<span class="inactive-folder" th:text="${folder.name}"></span>
+					</div>
+
+					<div th:unless="${parentFolder==folder.id}">
+						<a class="folder" th:text="${folder.name}"
+							th:href="@{/MoveDocument(folderId=${folder.id},document=${document})}"></a>
+					</div>
+
+					<div th:replace="::folderTree(${folders}, ${folder.id},${mode})"></div>
+				</li>
+			</ul>
+
+		</div>
+		
+		<div th:unless="${mode}">
+			<ul>
+				<li th:each="folder : ${folders}"
+					th:if="${folder.parentFolderId} == ${parentId}"><a
+					class="folder"  th:text="${folder.name}"
+					th:href="@{/GoToContentPage(folder=${folder.id})}"></a>
+					<div th:replace="::folderTree(${folders}, ${folder.id},${mode})"></div></li>
+			</ul>
+		</div>
+		
+	</div>
+	
+    <div class="container">
+    <div class="header">         
+	<div th:unless="${move_mode}">
+		<h2>Home page</h2>
+		<h4>Welcome <span th:text="${session.currentUser.name}"></span> </h4>
+	</div>
+	
+	<div th:if="${move_mode}==true">
+		<h2>Choose destination folder</h2>
+		<h4 th:text="${move_document_mode}"></h4>
+	</div>
+	
+	<div class="user-info">
+                <span th:text="'Username: ' + ${session.currentUser.name}"></span>
+                <span th:text="'Email: ' + ${session.currentUser.email}"></span>
+                <a class="logout" href="Logout">Logout</a>
+                <div th:if="${move_mode}==true">
+                <a class="goHome" href="GoToHome">Home</a>
+                </div>
+     </div>
+	</div>
+	<div th:unless="${move_mode}">
+		<div class="folder-container">
+		<div th:replace="::folderTree(${folders}, 0,false)"></div>
+		</div>
+			<a class="content-management" href="GoToContentManagementPage">Content Management</a>
+	</div>
+
+	<div th:if="${move_mode}==true">
+		<div class="folder-container">
+		<div th:replace="::folderTree(${folders}, 0,true)"></div>
+		</div>
+     </div>
+     
+		<div class="error" th:if="${error}" th:text="${error}"></div>
+	</div>
+	
+</body>
+</html>
+

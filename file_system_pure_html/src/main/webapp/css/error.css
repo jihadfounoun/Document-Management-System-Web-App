@@ -1,0 +1,122 @@
+/* Stili per il corpo della pagina */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #007BFF;
+    color: white;
+    padding: 6px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px; /* Dimensione del testo per l'emoji */
+    line-height: 1; /* Altezza della linea per centrare verticalmente */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1; /* Posiziona sopra gli altri contenuti */
+}
+
+.back-button::before {
+    content: '←'; /* Emoji della freccia sinistra */
+    display: block; /* Mostra come blocco per il centratura */
+    font-family: Arial, sans-serif; /* Assicura che l'emoji sia ben resa */
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1); /* Effetto di ingrandimento al passaggio del mouse */
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Altezza dello schermo intero */
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    background-color: #eee;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: right;
+}
+
+.user-info span {
+    display: block;
+}
+
+.logout,
+.goHome {
+    color: #007BFF;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.logout:hover,
+.goHome:hover {
+    text-decoration: underline;
+}
+
+/* Stili per il contenitore principale */
+.error-container {
+	    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+	
+    width: 50%; /* Larghezza del contenitore */
+    max-width: 800px; /* Larghezza massima del contenitore */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Stili per il titolo "Error" */
+.error-title {
+    font-size: 36px;
+    color: #ff6347; /* Colore rosso */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Stili per il messaggio di errore */
+.error-message {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+/* Stili per i link */
+.error-links {
+    margin-top: 20px;
+}
+
+.error-links a {
+    text-decoration: none;
+    color: #007bff; /* Colore blu */
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.error-links a:hover {
+    background-color: #007bff;
+    color: #fff;
+}

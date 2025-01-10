@@ -1,0 +1,116 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+h2 {
+    color: #007BFF;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    background-color: #eee;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: right;
+}
+
+.user-info span {
+    display: block;
+}
+
+.folder-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.inactive-folder{
+	color:grey;
+}
+.folder {
+    color: #007BFF; /* Colore normale del testo */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    transition: color 0.3s ease; /* Transizione fluida per il cambio colore */
+}
+
+/* Cambia colore del testo quando si passa con il mouse sopra */
+.folder:hover {
+    color: #0056b3; /* Cambio colore del testo al passaggio del mouse */
+    text-decoration: none; /* Rimuove la sottolineatura al passaggio del mouse */
+}
+
+/* Cambia colore del testo quando viene schiacciato */
+.folder:active {
+    color: #003f7f; /* Cambio colore del testo quando viene schiacciato */
+    text-decoration: none; /* Rimuove la sottolineatura quando viene schiacciato */
+}
+.inactive-folder::before,
+.folder::before {
+    content: '\1F4C1'; /* Codice Unicode per l'emoji della cartella 📁 */
+    font-size: 1.2em; /* Dimensione dell'emoji */
+}
+
+
+
+.content-management {
+    display: block;
+    margin-top: 20px;
+    color: #007BFF;
+    text-align: center;
+}
+
+.move-button::before{
+	content: "\21B9";
+	color: blue;
+}
+
+.content-management:hover {
+    text-decoration: underline;
+}
+
+.logout {
+    margin-top: 10px;
+    display: block;
+    color: #007BFF;
+}
+
+.logout:hover {
+    text-decoration: underline;
+}
+
+.goHome {
+    margin-top: 10px;
+    display: block;
+    color: #007BFF;
+}
+
+.goHome:hover {
+    text-decoration: underline;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}

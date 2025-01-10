@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Content Management</title>
+<link rel="stylesheet" href="css/cm.css">
+</head>
+<body>
+	<div class="container" >
+	
+	<a class="back-button" href="GoBack"></a>
+	
+	<br> <br>
+		<div class="header">
+			<h2>Content Management</h2>
+			<div class="user-info">
+				<span th:text="'Username: ' + ${session.currentUser.name}"></span> <span
+					th:text="'Email: ' + ${session.currentUser.email}"></span> <a
+					class="logout" href="Logout">Logout</a> <a class="goHome"
+					href="GoToHome">Home</a>
+			</div>
+		</div>
+		
+		
+		<div class="">
+			Here you can create a child folder:
+			<br>
+			<form method=post action=AddFolder>
+				<div class="form-group">
+				<div>
+					<label for="name">name</label> <input type="text"
+						placeholder="Enter folder name" name="name" required> 
+						</div><div>
+						<label for="parentFolder"></label> <input type="hidden"
+						name="parentFolderId" th:value="${parentFolderId}" required>
+				</div>
+				</div>
+				<button type="submit">create child folder</button>
+			</form>
+			<div class="error" th:if="${error_folder}" th:text="${error_folder}"></div>
+		</div>
+		<br><br>
+		
+		<div class="">
+			Here you can add a document:
+			<br>
+			<form method=post action=AddDocument>
+				<div class="form-group">
+				    <div>
+					<label for="name">name</label> <input type="text"
+						placeholder="Enter document name" name="name" required> 
+						</div>
+						<div><label for="type">type</label> <input type="text"
+						placeholder="Enter document format" name="type" required>
+					</div>
+					<div><label for="description">description</label> <input type="text"
+						placeholder="Enter brief description of the document"
+						name="description" required> </div>
+						
+						<div><label for="parentFolder"></label> <input type="hidden"
+						name="parentFolderId" th:value="${parentFolderId}" required>
+				</div></div>
+				<button type="submit">add document</button>
+			</form>
+			<div class="error" th:if="${error_document}" th:text="${error_document}"></div>	
+		</div>
+		
+	</div>
+		
+</body>
+</html>

@@ -1,0 +1,224 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+}
+
+h2 {
+    color: #007BFF;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    background-color: #eee;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.user-info span {
+    display: block;
+}
+
+.dustbin::before {
+    content: "\1F5D1"; 
+    font-size: 50px;   
+    display: inline-block;
+}
+
+
+.goHome,
+.logout {
+    margin-top: 10px;
+    display: block;
+    color: #007BFF;
+}
+.goHome:hover,
+.logout:hover {
+    text-decoration: underline;
+}
+
+
+
+.inactive-folder{
+	color:grey;
+}
+.document,
+.folder {
+    color: #007BFF; 
+    text-decoration: none; 
+    transition: color 0.3s ease; 
+}
+
+
+.document:hover,
+.folder:hover {
+    color: #0056b3; 
+    text-decoration: none; 
+}
+
+
+.document:active,
+.folder:active {
+    color: #003f7f; 
+    text-decoration: none; 
+}
+.inactive-folder::before,
+.folder::before {
+    content: '\1F4C1';
+    font-size: 1.2em;
+}
+.document::before {
+    content: "\1F4C4"; 
+    font-size: 20px;
+    margin-right: 10px;
+}
+.addFolder-button::before{
+	content: "\1F5C0\FE62"; 
+    font-size: 15px;
+    color: grey;
+}
+.addDocument-button::before{
+	content: "\1F5CE\FE62"; 
+    font-size: 15px;
+    color: grey;
+}
+
+.addMainFolder-button::before{
+	content: "\1F5C0\FE62";
+    font-size: 20px;
+    color: grey;
+}
+
+.inactive-element{
+	color:grey;
+}
+
+
+.dustbin::before {
+    content: "\1F5D1"; 
+    font-size: 35px;   
+    display: inline-block;
+
+}
+
+.items-container{
+	    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+
+ .left-container{
+    width: 45%;
+    /*border: 1px solid #ccc;*/
+    padding: 10px;
+}
+
+.droppable-folder-container{
+	width: 45%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+form {
+    margin-top: 10px;
+}
+
+form input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Stili per il messaggio di errore */
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+  border-radius: 10px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}

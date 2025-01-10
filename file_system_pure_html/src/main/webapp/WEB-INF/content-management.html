@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/cm.css">
+</head>
+<body>
+
+
+	<div th:fragment="folderTree(folders, parentId)">
+		<ul>
+			<li th:each="folder : ${folders}"
+				th:if="${folder.parentFolderId} == ${parentId}"><a
+				class="folder" th:text="${folder.name}"
+				th:href="@{/ContentManagement(parentFolderId=${folder.id})}"></a>
+				<div th:replace="::folderTree(${folders}, ${folder.id})"></div></li>
+		</ul>
+	</div>
+
+	<div class="container">
+	<a class="back-button" href="GoBack"></a>
+	<br> <br>
+	<div class="header">  
+		<h2>Content Management</h2>
+
+		<div class="user-info">
+			<span th:text="'Username: ' + ${session.currentUser.name}"></span> <span
+				th:text="'Email: ' + ${session.currentUser.email}"></span> <a
+				class="logout" href="Logout">Logout</a>
+				<a class="goHome" href="GoToHome">Home</a>
+		</div>
+	</div>	
+	
+		<div th:if="${folders.size}>0">
+		Select the father folder to create a child folder or
+		document
+		<div class="folder-container" th:replace="::folderTree(${folders}, 0)"></div>
+		<div class="error" th:text="${error_childItems}"></div>
+	    </div>
+	    
+	   <div class="">
+		Here you can create a main folder: <br>
+		<form method=post action=AddFolder>
+			<div class="form-group">
+				<label for="name">name</label> <input type="text"
+					placeholder="Enter folder name" name="name" required>
+			</div>
+			<button type="submit">create main folder</button>
+		</form>
+	</div>
+		<div class="error"  th:text="${error_rootItems}"></div>
+	</div>
+
+
+
+
+
+	
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Document Page</title>
+<link rel="stylesheet" href="css/cm.css">
+</head>
+<body>
+  <div class="container">
+
+		<a class="back-button" href="GoBack"></a> <br> <br>
+		<div class="header">
+			<h2>Details of document</h2>
+			<div class="user-info">
+				<span th:text="'Username: ' + ${session.currentUser.name}"></span> <span
+					th:text="'Email: ' + ${session.currentUser.email}"></span> <a
+					class="logout" href="Logout">Logout</a> <a class="goHome"
+					href="GoToHome">Home</a>
+			</div>
+		</div>
+		<p><strong>Name:</strong> <span th:text="${document.name}"></span></p>
+        <p><strong>Type:</strong> <span th:text="${document.type}"></span></p>
+        <p><strong>Description:</strong> <span th:text="${document.description}"></span></p>
+        <p><strong>Date:</strong> <span th:text="${document.date}"></span></p>
+	</div>
+ 
+</body>
+</html>

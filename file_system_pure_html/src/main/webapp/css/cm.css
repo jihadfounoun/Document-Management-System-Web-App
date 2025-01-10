@@ -1,0 +1,170 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #007BFF;
+    color: white;
+    padding: 6px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px; /* Dimensione del testo per l'emoji */
+    line-height: 1; /* Altezza della linea per centrare verticalmente */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1; /* Posiziona sopra gli altri contenuti */
+}
+
+.back-button::before {
+    content: '←'; /* Emoji della freccia sinistra */
+    display: block; /* Mostra come blocco per il centratura */
+    font-family: Arial, sans-serif; /* Assicura che l'emoji sia ben resa */
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1); /* Effetto di ingrandimento al passaggio del mouse */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #007BFF;
+}
+
+.user-info {
+    background-color: #eee;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: right;
+}
+
+.user-info span {
+    display: block;
+}
+.logout,
+.goHome {
+    color: #007BFF;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.logout:hover,
+.goHome:hover {
+    text-decoration: underline;
+}
+
+.folder-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.document,
+.folder {
+    color: #007BFF; /* Colore normale del testo */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    transition: color 0.3s ease; /* Transizione fluida per il cambio colore */
+}
+.move-button::before{
+	text-decoration: none; /* Rimuove la sottolineatura */
+    
+	content: "\21B9";
+	
+}
+
+/* Cambia colore del testo quando si passa con il mouse sopra */
+.move-button:hover,
+.document:hover,
+.folder:hover {
+    color: #0056b3; /* Cambio colore del testo al passaggio del mouse */
+    text-decoration: none; /* Rimuove la sottolineatura al passaggio del mouse */
+}
+
+/* Cambia colore del testo quando viene schiacciato */
+.move-button:active,
+.document:active,
+.folder:active {
+    color: #003f7f; /* Cambio colore del testo quando viene schiacciato */
+    text-decoration: none; /* Rimuove la sottolineatura quando viene schiacciato */
+}
+.folder::before {
+    content: '\1F4C1'; /* Codice Unicode per l'emoji della cartella 📁 */
+    font-size: 1.2em; /* Dimensione dell'emoji */
+}
+/* Stili per il documento con emoji utilizzando Unicode */
+.document::before {
+    content: "\1F4C4"; /* Codice Unicode per l'emoji del documento */
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.date{
+	color:grey;
+}
+
+.move-button::before{
+	content: " move ";
+	text-decoration: none; /* Rimuove la sottolineatura */
+    color: green;
+	
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+form {
+    margin-top: 10px;
+}
+
+form input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}

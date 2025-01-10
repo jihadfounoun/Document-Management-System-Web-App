@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Content page </title>
+<link rel="stylesheet" href="css/cm.css">
+</head>
+<body>
+
+	<div class="container">
+
+		<a class="back-button" href="GoBack"></a> <br> <br>
+		<div class="header">
+			<h2>Folder Content</h2>
+			<div class="user-info">
+				<span th:text="'Username: ' + ${session.currentUser.name}"></span> <span
+					th:text="'Email: ' + ${session.currentUser.email}"></span> <a
+					class="logout" href="Logout">Logout</a> <a class="goHome"
+					href="GoToHome">Home</a>
+			</div>
+		</div>
+
+		Content of <span th:text="${currentFolder.name}"></span>
+		<ul>
+
+			<li  th:each="document : ${documents}"><a class="document"
+				th:text="${document.name}"
+				th:href="@{/GoToDocumentPage(documentId=${document.id})}"></a>  <a class="move-button" th:href="@{/GoToMoveDocument(documentId=${document.id})}">
+					 </a></li>
+
+			<li  th:each="folder : ${folders}">
+			<a class="folder"
+				th:text="${folder.name}" th:href="@{/GoToContentPage(folder=${folder.id})}"></a></li>
+
+		</ul>
+		<p class="date" th:text="'folder created on '+ ${currentFolder.date}"></p>
+	</div>
+
+</body>
+</html>

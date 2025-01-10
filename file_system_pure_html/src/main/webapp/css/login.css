@@ -1,0 +1,74 @@
+/* Stili per il contenitore principale */
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: left; /* Aggiungi questo per allineare a sinistra il testo all'interno del contenitore */
+}
+
+/* Stili per i gruppi di form */
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+form {
+    margin-top: 10px;
+}
+/* Stili per le etichette */
+.form-group label {
+    flex: 1;
+    padding-right: 10px;
+}
+
+h2 {
+    color: #007BFF;
+}
+
+/* Stili per gli input */
+.form-group input[type="text"], .form-group input[type="password"], .form-group input[type="email"] {
+    flex: 2;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Altri stili esistenti rimangono invariati */
+button[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Stili per il messaggio di errore */
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Stili per i link */
+a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}

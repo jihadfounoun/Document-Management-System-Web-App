@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/utilities.js" charset="utf-8" defer></script>
+<script src="js/loginHandler.js" charset="utf-8" defer></script>
+<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+	<br><br><br>
+	<h1>Welcome to our online file storage service</h1>
+	<br><br><br>
+	<div class="container" >
+		
+		<div id="login_div">
+		<div>insert your credentials to login</div><br>
+		<div class="form-container">
+			<form id="login_form" action="#">
+			<div class="form-group">
+				<label for="usernam">Username</label> <input type="text" name="username" required> <br>
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label><input type="password" name="password" required><br>
+			</div>
+			    <button id="login_button" type="submit">Login</button>
+			</form>
+			<div class="error" id="login_error"></div>
+		</div>
+        </div>
+	  <div id="register_div">
+		<div>Complete the required fields to sign up</div><br>
+		 <div class="form-container">
+			<form id="registration_form" action="#">
+				<div class="form-group">
+					<label for="name">Name</label> <input type="text"
+						placeholder="Enter your name" name="name" required>
+				</div>
+				<div class="form-group">
+					<label for="email">Email</label> <input type="email"
+						placeholder="Enter your email" name="email" required>
+				</div>
+				<div class="form-group">
+					<label for="usernam">Username</label> <input type="text"
+						placeholder="Enter your username" name="username" required>
+				</div>
+				<div class="form-group">
+					<label for="password">Password</label> <input type="password"
+						placeholder="Enter your desired password" name="password" required><br>
+				</div>
+				<div class="form-group">
+					<label for="passwordConfirm">Confirm Password</label> <input
+						type="password" placeholder="Confirm chosen password"
+						name="repeated_password" required><br>
+				</div>
+				<button id="register_button" type="submit">Register</button>
+			</form>
+			<div class="error" id="register_error"></div>
+		</div>
+		</div>
+	
+	
+	
+    <a href="#" id="goToRegister_button">Register</a>
+    <a href="#" id="goToLogin_button">Login</a>
+    </div>
+</body>
+</html>
