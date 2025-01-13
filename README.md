@@ -11,11 +11,11 @@ This project was developed as part of the *Informatic Technologies for the Web* 
 
 Design and implement a secure web application for managing documents and folders, ensuring data integrity with validation on both client and server sides.
 
-## Repository Structure
+### Repository Structure
 
 The repository consists of a `dump` folder with the MySQL schema export for the database, the `file_system_ria` directory containing the RIA version, and the `file_system_pure_html` directory containing the pure HTML version.
 
-
+---
 
 ### Technology Stack
 
